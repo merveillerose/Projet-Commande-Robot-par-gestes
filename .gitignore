@@ -1,0 +1,29 @@
+# Build outputs
+Debug/
+Release/
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.list
+*.o
+*.d
+*.su
+
+# STM32CubeIDE / Eclipse metadata
+.settings/
+*.launch
+*.log
+*.tmp
+*.bak
+
+# Generated step outputs
+*.ioc-backup
+
+# VS Code
+.vscode/
+
+# OS noise
+Thumbs.db
+Desktop.ini
