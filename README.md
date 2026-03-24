@@ -42,7 +42,7 @@ Tune duty cycles in `HAL_UART_RxCpltCallback` inside `Core/Src/main.c` to adapt 
 
 Suggested tidy layout before pushing:
 - Keep only the STM32F407 project in the root (or move it to `firmware/robotvf/`).
-- Keep only one copy of the N6 demo (likely `third_party/x-cube-n6-ai-hand-landmarks/`) and delete the duplicate folder when ready.
+- Keep only one copy of the N6 demo (now `third_party/x-cube-n6-ai-hand-landmarks/`).
 - Put any reports (for example your PDF) into `docs/`.
 - Store project photos or diagrams in `docs/media/`.
 
@@ -62,12 +62,19 @@ Avoid committing `Debug/` or the large STM32N6 sample if you do not need it.
 - Command parser: edit `HAL_UART_RxCpltCallback` in `Core/Src/main.c` to add new verbs or change duty cycles.
 - UART: 9600 bps 8N1 on USART3; adjust in `Core/Src/usart.c` if your link requires a different rate.
 
+## AI hand-landmark reference (STM32N6 sample)
+- The folder `third_party/x-cube-n6-ai-hand-landmarks/` contains ST's two-stage palm + hand-landmark demo for STM32N6 (palm detection then landmark regression, resized/rotated between stages).
+- Official package: see ST's X-CUBE-N6-AI hand-landmarks sample on GitHub (https://github.com/STMicroelectronics/x-cube-n6-ai-hand-landmarks). If you publish this code, keep ST's license (LICENSE.md inside the folder).
+- This sample is not used by the STM32F4 RobotVF firmware but can serve as a reference for AI deployment on STM32N6 boards.
+
 ## Demo
-- Live demo video: place your link here, for example `https://youtu.be/XXXXXXXXXXX`.
-- If you publish binaries, add release assets on GitHub and link them here.
+- Live demo video: <!--place your link here, for example `https://youtu.be/XXXXXXXXXXX`. -->
+<!-- - If you publish binaries, add release assets on GitHub and link them here. -->
 
 ## Media
-Add at least one photo of the setup or a block diagram. Example:
+
 ![RobotVF setup](docs/media/robotvf-setup.jpg)
 
-Put your image file at `docs/media/robotvf-setup.jpg` (create the folder if it does not exist) and update the filename in the Markdown if needed.
+<!--Put your image file at `docs/media/robotvf-setup.jpg` (create the folder if it does not exist) and update the filename in the Markdown if needed. -->
+
+
