@@ -1,0 +1,7 @@
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/freertos_bsp.c:31:10:HAL_GetTick	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/freertos_bsp.c:36:6:HAL_Delay	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/freertos_bsp.c:44:19:HAL_InitTick	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/freertos_bsp.c:49:6:TIM4_Config	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/freertos_bsp.c:68:10:TIM4_Get_Value	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/freertos_bsp.c:74:6:vApplicationGetIdleTaskMemory	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/freertos_bsp.c:84:6:vApplicationGetTimerTaskMemory	1

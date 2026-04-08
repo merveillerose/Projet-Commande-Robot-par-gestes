@@ -1,80 +1,87 @@
-# STM32F407 RobotVF - UART Motor Control
+# Gesture-Controlled AI Robot: A Distributed STM32 Architecture
 
-Small firmware for an STM32F407VGT6 (LQFP100) that drives a differential-drive robot using four PWM outputs on TIM3 and a simple text command interface on USART3 (9600 bps, 8N1). Commands such as `AVANCE+`, `STOP`, `GAUCHE`, and `DROITE` set duty cycles on the four TIM3 channels to move the robot forward, stop, or turn.
+[![Board: STM32N6570-DK](https://img.shields.io/badge/Brain-STM32N6570--DK-blue)](https://www.st.com/en/evaluation-tools/stm32n6570-dk.html)
+[![Board: STM32F407VGT6](https://img.shields.io/badge/Actuator-STM32F407VGT6-red)](https://www.st.com/en/microcontrollers-microprocessors/stm32f407-417.html)
+[![AI: NPU Accelerated](https://img.shields.io/badge/AI-NPU_Accelerated-green)](#)
+[![Wireless: Bluetooth HC-05 & HC-06](https://img.shields.io/badge/Wireless-HC--05%20%26%20HC--06-orange)](#)
 
-## What this project does
-- Initializes TIM3 with a 1 kHz PWM (prescaler 15, period 999) on PB0, PB1, PB4, PB5.
-- Listens on USART3 (PB10/PB11) with interrupt-driven RX; each newline-terminated string is parsed.
-- Maps French keywords to motor duty cycles via `__HAL_TIM_SET_COMPARE` in `Core/Src/main.c`.
-- Uses only HAL and the internal HSI clock; no RTOS.
+This project demonstrates a high-performance, real-time robot control system using hand gestures. By leveraging the cutting-edge **NPU (Neural Processing Unit)** of the STM32N6 series and the robust motor control capabilities of the STM32F4, we've built a "Brain-Actuator" distributed system that translates visual human intent into physical motion.
 
-## Hardware at a glance
-- MCU: STM32F407VGT6 (HSI clock, STM32Cube HAL).
-- Motor driver: any dual H-bridge that can take four PWM inputs (for example L298N or L293D).
-- UART link: PB10 (TX) / PB11 (RX) to a USB-UART dongle or Bluetooth module (HC-05 works) at 9600 bps, 8N1.
-- Power: size your supply for both the MCU board and the motors; keep motor ground tied to MCU ground.
+---
 
-## Command set
-| Command  | Effect on TIM3 channels (CH1/CH2/CH3/CH4) | Notes                    |
-|----------|-------------------------------------------|--------------------------|
-| AVANCE+  | 750, 0, 750, 0                            | Forward / both motors on |
-| GAUCHE   | 1000, 0, 500, 0                           | Turn left                |
-| DROITE   | 500, 0, 1000, 0                           | Turn right               |
-| STOP     | 0, 0, 0, 0                                | All motors off           |
+## 🚀 Overview
 
-Tune duty cycles in `HAL_UART_RxCpltCallback` inside `Core/Src/main.c` to adapt speed or torque. With the current clocking, `compare = 1000` equals 100 percent duty.
+Imagine controlling a mobile robot with nothing but your hand. No joystick, no keyboard—just natural gestures. This project achieves exactly that through a two-stage hardware pipeline:
 
-## Building and flashing
-1) Open `robotvf.ioc` in STM32CubeIDE (CubeMX 6.15.0, F4 HAL 1.28.3; STM32CubeIDE 1.15.x or newer is fine).
-2) From STM32CubeIDE, use **Project > Build** to generate firmware (Debug configuration uses HSI at 16 MHz).
-3) Connect ST-LINK to your STM32F407 board and **Run > Debug/Run** to flash.
+1.  **The "Brain" (STM32N6570-DK):** Captures high-definition video, runs deep learning models to identify 21 hand landmarks in real-time, and determines the intended command.
+2.  **The "Wireless Bridge" (HC-05 & HC-06):** Transmits these commands asynchronously via Bluetooth. The STM32N6 uses an **HC-05 configured as a Master** to send data, which is received by an **HC-06 configured as a Slave** on the robot.
+3.  **The "Actuator" (STM32F407VGT6):** Parses the commands and drives 4 DC motors using precisely tuned PWM signals.
 
-## Running
-1) Connect PB10/PB11 to your UART or Bluetooth module; share ground.
-2) Open a serial terminal at 9600 bps, send one command per line (CR or LF accepted).
-3) Observe the robot: the duty cycles update immediately after each newline.
+---
 
-## Repository layout (current state)
-- `Core/`, `Drivers/`, `robotvf.ioc`: main STM32CubeIDE project.
-- `Debug/`: generated build output (now ignored by git).
-- `third_party/x-cube-n6-ai-hand-landmarks/`: vendor sample for STM32N6 hand-landmark AI (kept as reference).
-- `third_party/x-cube-n6-ai-hand-landmarks-duplicate/`: spare copy of the same sample; remove if you don't need it.
+## 🧠 System Architecture
 
-Suggested tidy layout before pushing:
-- Keep only the STM32F407 project in the root (or move it to `firmware/robotvf/`).
-- Keep only one copy of the N6 demo (now `third_party/x-cube-n6-ai-hand-landmarks/`).
-- Put any reports (for example your PDF) into `docs/`.
-- Store project photos or diagrams in `docs/media/`.
+We opted for a **distributed intelligence** approach to maximize performance and modularity.
 
-## GitHub quick start
-```bash
-git init
-git add .gitignore README.md Core Drivers robotvf.ioc .cproject .project STM32F407VGTX_FLASH.ld STM32F407VGTX_RAM.ld
-git commit -m "Add STM32F407 robot controller firmware"
-git branch -M main
-git remote add origin <your-repo-url>
-git push -u origin main
-```
-Avoid committing `Debug/` or the large STM32N6 sample if you do not need it.
+### 1. Vision & AI (The Brain)
+*   **Sensor:** IMX335 Camera Module.
+*   **AI Models:** A sequential execution of two quantized models:
+    *   **Palm Detection (PD):** Locates the hand within the frame.
+    *   **Hand Landmark (HL):** Identifies 21 key points (knuckles, tips, wrist).
+*   **NPU Acceleration:** Inference is handled by the dedicated NPU on the STM32N6, allowing for high FPS and low latency that would be impossible on standard MCUs.
+*   **Gesture Logic:** We calculate the relative distance and orientation between the finger tips and the wrist to map hand positions to `FORWARD`, `BACKWARD`, `LEFT`, `RIGHT`, and `STOP`.
 
-## Configuration knobs
-- PWM frequency: `f_pwm = 16 MHz / (Prescaler+1) / (Period+1) = 1 kHz` (set in `Core/Src/tim.c`).
-- Command parser: edit `HAL_UART_RxCpltCallback` in `Core/Src/main.c` to add new verbs or change duty cycles.
-- UART: 9600 bps 8N1 on USART3; adjust in `Core/Src/usart.c` if your link requires a different rate.
+### 2. Motor Control (The Actuator)
+*   **Interrupt-Driven Logic:** The STM32F4 uses asynchronous UART reception (`HAL_UART_Receive_IT`) to ensure the CPU is never blocked waiting for commands.
+*   **PWM Generation:** TIM3 generates 1kHz PWM signals across 4 channels to control the H-Bridge motor drivers.
+*   **Responsive Parsing:** A circular buffer and string parsing (`strstr`) allow for robust command execution even in high-traffic wireless environments.
 
-## AI hand-landmark reference (STM32N6 sample)
-- The folder `third_party/x-cube-n6-ai-hand-landmarks/` contains ST's two-stage palm + hand-landmark demo for STM32N6 (palm detection then landmark regression, resized/rotated between stages).
-- Official package: see ST's X-CUBE-N6-AI hand-landmarks sample on GitHub (https://github.com/STMicroelectronics/x-cube-n6-ai-hand-landmarks). If you publish this code, keep ST's license (LICENSE.md inside the folder).
-- This sample is not used by the STM32F4 RobotVF firmware but can serve as a reference for AI deployment on STM32N6 boards.
+---
 
-## Demo
-- Live demo video: <!--place your link here, for example `https://youtu.be/XXXXXXXXXXX`. -->
-<!-- - If you publish binaries, add release assets on GitHub and link them here. -->
+## 🛠️ Hardware Stack
 
-## Media
+| Component | Role | Description |
+| :--- | :--- | :--- |
+| **STM32N6570-DK** | Master / AI Unit | NPU-accelerated gesture recognition. |
+| **STM32F4-Discovery** | Slave / Control Unit | Motor driving and PWM management. |
+| **HC-05 Module** | Transmitter (Master) | Bluetooth SPP link @ 115200 baud, connected to STM32N6. |
+| **HC-06 Module** | Receiver (Slave) | Bluetooth SPP link @ 115200 baud, connected to STM32F4. |
+| **IMX335** | Vision | 5MP Digital Image Sensor. |
+| **4WD Chassis** | Physical | 4 DC Motors with H-Bridge controllers. |
 
-![RobotVF setup](docs/media/robotvf-setup.jpg)
+---
 
-<!--Put your image file at `docs/media/robotvf-setup.jpg` (create the folder if it does not exist) and update the filename in the Markdown if needed. -->
+## 🔒 Smart Safety Features
+
+Beyond basic movement, the system includes a sophisticated **Locking Mechanism** implemented on the AI side:
+*   **State Machine:** The robot starts in a **Locked State (Red LED indication)**.
+*   **Unlocking Sequence:** A specific gesture (index finger trigger) is required to unlock the robot.
+*   **Auto-Lock:** If the system detects a `STOP` gesture for 200 consecutive frames, it automatically re-locks to prevent accidental movements.
+
+---
+
+## 📂 Project Structure
+
+*   `code robot/`: STM32CubeIDE project for the STM32F4 motor controller.
+*   `x-cube-n6-ai-hand-landmarks-main/`: The NPU-accelerated AI application for the STM32N6.
 
 
+---
+
+## 🎓 About
+
+This project was developed as part of the **S8 Project** at **ENSEA** (Ecole Nationale Supérieure de l'Electronique et de ses Applications).
+
+**Team:**
+*   **GARAFI Yassin**
+*   **PICQUART Tom**
+*   **PENG Haoyu**
+*   **MERVEILLE Rose Yomba**
+
+**Supervised by:** M. MONCHAL Laurent (Academic Year 2025/2026)
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License - see the `LICENSE` file for details.

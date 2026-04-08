@@ -1,0 +1,15 @@
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ecloader.c:109:17:ec_get_blob_ptr	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ecloader.c:167:6:ec_copy_blob	16	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ecloader.c:256:6:ec_copy_reloc_table	24	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ecloader.c:349:20:ec_get_reloc_table_ptr	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ecloader.c:384:14:ec_get_num_relocs	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ecloader.c:406:13:ec_get_reloc_id	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ecloader.c:446:6:ec_reloc	24	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ecloader.c:511:6:ec_reloc_by_id	48	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ecloader.c:593:6:ec_copy_patch_table	16	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ecloader.c:685:20:ec_get_patch_table_ptr	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ecloader.c:722:14:ec_get_num_patches	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ecloader.c:744:13:ec_get_patch_id	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ecloader.c:777:10:ec_get_patch_mask	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ecloader.c:812:6:ec_patch	24	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ecloader.c:871:6:ec_patch_by_id	40	static

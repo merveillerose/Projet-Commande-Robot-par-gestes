@@ -1,0 +1,84 @@
+# Explication du Projet Robot STM32F4
+
+## 1. Explication Générale
+
+Ce projet implémente le contrôle d'un robot mobile à l'aide d'un microcontrôleur STM32F407VGT6. La logique principale est de recevoir des commandes via une liaison série (USART) et de piloter des moteurs en conséquence à l'aide de signaux PWM (Pulse-Width Modulation).
+
+Le fonctionnement est entièrement basé sur les interruptions. Le processeur n'attend pas activement les commandes dans une boucle, mais réagit aux octets reçus sur le port série. Cela en fait une application efficace en termes de consommation de ressources.
+
+Les commandes textuelles suivantes, terminées par un caractère de nouvelle ligne ('\n' ou '\r'), sont reconnues :
+- **"AVANCE+"** : Fait avancer le robot.
+- **"STOP"** : Arrête tous les moteurs.
+- **"GAUCHE"** : Fait tourner le robot à gauche.
+- **"DROITE"** : Fait tourner le robot à droite.
+
+Le projet utilise les périphériques STM32 suivants :
+- **TIM3** : Pour générer jusqu'à quatre signaux PWM afin de contrôler la vitesse des moteurs.
+- **USART3** : Pour la communication série, afin de recevoir les commandes de contrôle.
+- **GPIO** : Pour configurer les broches nécessaires pour le timer et l'USART.
+- **NVIC** : Pour gérer les interruptions de l'USART.
+
+---
+
+## 2. Configuration des Périphériques
+
+### Timer PWM (TIM3)
+
+Le Timer 3 est configuré pour générer des signaux PWM pour contrôler les moteurs.
+
+- **Source d'horloge** : L'horloge du système est configurée pour utiliser l'oscillateur interne HSI, qui a une fréquence de 16 MHz sur ce microcontrôleur. L'horloge du bus APB1 (sur lequel se trouve TIM3) est également à 16 MHz.
+- **Prescaler** : La valeur du pré-diviseur est de **15**.
+  - Fréquence du compteur du timer = 16,000,000 Hz / (15 + 1) = **1 MHz**.
+- **Période (ARR - Auto-Reload Register)** : La valeur est de **999**. Le compteur compte de 0 à 999 (1000 pas).
+- **Fréquence PWM** : La fréquence du signal PWM est calculée comme suit :
+  - Fréquence PWM = Fréquence du compteur / (Période + 1)
+  - Fréquence PWM = 1,000,000 Hz / (999 + 1) = **1000 Hz (1 kHz)**.
+- **Broches de sortie (Pins)** : Les signaux PWM sont émis sur les broches du port B :
+  - `PB4` : TIM3 Channel 1
+  - `PB5` : TIM3 Channel 2
+  - `PB0` : TIM3 Channel 3
+  - `PB1` : TIM3 Channel 4
+
+### Communication Série (USART3)
+
+L'USART3 est configuré pour recevoir les commandes de contrôle.
+
+- **Baud Rate** : **9600** bits par seconde.
+- **Format de la trame** :
+  - **Word Length** : 8 bits de données.
+  - **Parity** : Aucune.
+  - **Stop Bits** : 1 bit d'arrêt.
+- **Mode** : Réception et Transmission (RX/TX).
+- **Interruptions** : L'interruption de réception est activée. Chaque fois qu'un octet est reçu, une routine de service d'interruption (`HAL_UART_RxCpltCallback`) est appelée pour traiter le caractère.
+- **Broches (Pins)** : Les broches de communication sont sur le port B :
+  - `PB10` : USART3_TX (Transmission)
+  - `PB11` : USART3_RX (Réception)
+
+---
+
+## 3. Contrôle des Moteurs et Rapport Cyclique
+
+Le rapport cyclique (duty cycle) du signal PWM détermine la vitesse du moteur. Il est contrôlé en changeant la valeur du registre de comparaison (CCR), qui est fait via la fonction `__HAL_TIM_SET_COMPARE()`. La valeur de ce registre (appelée "Pulse" dans le code de configuration) peut varier de 0 à 999.
+
+**Rapport Cyclique (%) = (Valeur "Pulse" / 1000) * 100**
+
+Voici les rapports cycliques appliqués pour chaque commande :
+
+- **`STOP`**
+  - Pulse CH1, CH2, CH3, CH4 = 0
+  - **Rapport cyclique = 0% sur tous les canaux.**
+
+- **`AVANCE+`**
+  - Pulse CH1 = 750 -> **Rapport cyclique = 75%**
+  - Pulse CH3 = 750 -> **Rapport cyclique = 75%**
+  - Les canaux 2 et 4 sont à 0. Cela suggère que les canaux 1 et 3 contrôlent la marche avant des deux côtés du robot.
+
+- **`GAUCHE`**
+  - Pulse CH1 = 1000 -> **Rapport cyclique = 100%**
+  - Pulse CH3 = 500  -> **Rapport cyclique = 50%**
+  - Le robot tourne à gauche en faisant tourner une roue (ou un côté) plus vite que l'autre.
+
+- **`DROITE`**
+  - Pulse CH1 = 500  -> **Rapport cyclique = 50%**
+  - Pulse CH3 = 1000 -> **Rapport cyclique = 100%**
+  - Le robot tourne à droite en inversant les vitesses par rapport à la commande `GAUCHE`.

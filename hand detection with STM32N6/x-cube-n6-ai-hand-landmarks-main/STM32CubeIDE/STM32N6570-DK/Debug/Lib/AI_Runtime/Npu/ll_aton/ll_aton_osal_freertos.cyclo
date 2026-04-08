@@ -1,0 +1,6 @@
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ll_aton_osal_rtos_template.c:52:6:aton_osal_freertos_init	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ll_aton_osal_rtos_template.c:86:6:aton_osal_freertos_deinit	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ll_aton_osal_rtos_template.c:221:6:aton_osal_freertos_lock	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ll_aton_osal_rtos_template.c:233:6:aton_osal_freertos_unlock	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ll_aton_osal_rtos_template.c:272:6:aton_osal_freertos_wfe	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/AI_Runtime/Npu/ll_aton/ll_aton_osal_rtos_template.c:287:6:aton_osal_freertos_signal_event	2

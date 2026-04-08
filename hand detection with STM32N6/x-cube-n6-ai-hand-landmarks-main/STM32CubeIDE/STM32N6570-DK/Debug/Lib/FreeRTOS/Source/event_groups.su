@@ -1,0 +1,14 @@
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/event_groups.c:81:24:xEventGroupCreateStatic	16	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/event_groups.c:302:13:xEventGroupWaitBits	32	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/event_groups.c:458:13:xEventGroupClearBits	16	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/event_groups.c:707:6:vEventGroupClearBitsCallback	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/event_groups.c:488:16:xEventGroupClearBitsFromISR	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/event_groups.c:502:13:xEventGroupGetBitsFromISR	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/event_groups.c:518:13:xEventGroupSetBits	24	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/event_groups.c:179:13:xEventGroupSync	24	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/event_groups.c:698:6:vEventGroupSetBitsCallback	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/event_groups.c:614:6:vEventGroupDelete	16	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/event_groups.c:661:16:xEventGroupGetStaticBuffer	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/event_groups.c:753:16:xEventGroupSetBitsFromISR	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/event_groups.c:770:17:uxEventGroupGetNumber	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/event_groups.c:792:10:vEventGroupSetNumber	0	static

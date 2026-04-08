@@ -1,0 +1,5 @@
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app_cam.c:26:13:CAM_InitCropConfig	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app_cam.c:119:6:CAM_Init	136	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app_cam.c:155:6:CAM_DisplayPipe_Start	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app_cam.c:163:6:CAM_NNPipe_Start	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app_cam.c:171:6:CAM_IspUpdate	8	static

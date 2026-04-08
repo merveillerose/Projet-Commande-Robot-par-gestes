@@ -1,0 +1,4 @@
+Src/ld.o: \
+ C:/Users/tompi/Downloads/versionf\ de\ code2-17/versionf\ de\ code2-17/x-cube-n6-ai-hand-landmarks-main/Src/ld.c \
+ ../../../Inc/ld.h
+../../../Inc/ld.h:

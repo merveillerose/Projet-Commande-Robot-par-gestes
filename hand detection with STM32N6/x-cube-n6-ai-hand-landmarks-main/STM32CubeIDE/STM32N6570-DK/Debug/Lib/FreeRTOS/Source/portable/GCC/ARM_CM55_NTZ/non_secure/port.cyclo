@@ -1,0 +1,12 @@
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/portable/GCC/ARM_CM55_NTZ/non_secure/port.c:773:13:prvTaskExitError	2
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/portable/GCC/ARM_CM55_NTZ/non_secure/port.c:752:32:vPortSetupTimerInterrupt	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/portable/GCC/ARM_CM55_NTZ/non_secure/port.c:934:6:vPortYield	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/portable/GCC/ARM_CM55_NTZ/non_secure/port.c:946:6:vPortEnterCritical	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/portable/GCC/ARM_CM55_NTZ/non_secure/port.c:958:6:vPortExitCritical	2
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/portable/GCC/ARM_CM55_NTZ/non_secure/port.c:970:6:SysTick_Handler	2
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/portable/GCC/ARM_CM55_NTZ/non_secure/port.c:987:6:vPortSVCHandler_C	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/portable/GCC/ARM_CM55_NTZ/non_secure/port.c:1477:19:pxPortInitialiseStack	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/portable/GCC/ARM_CM55_NTZ/non_secure/port.c:1560:12:xPortStartScheduler	3
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/portable/GCC/ARM_CM55_NTZ/non_secure/port.c:1686:6:vPortEndScheduler	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/portable/GCC/ARM_CM55_NTZ/non_secure/port.c:1866:12:xPortIsInsideInterrupt	1
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/FreeRTOS/Source/portable/GCC/ARM_CM55_NTZ/non_secure/port.c:1891:10:vPortValidateInterruptPriority	2

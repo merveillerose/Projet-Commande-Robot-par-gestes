@@ -1,0 +1,21 @@
+../../../Lib/AI_Runtime/Npu/ll_aton/ll_aton_NN_interface.h:489:32:LL_Buffer_addr_start	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:371:13:copy_pd_box	12	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:581:12:clamp_point	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:713:13:decode_ld_landmark	72	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:1467:13:isp_thread_fct	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:1415:13:on_pd_toggle_button_click	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:1403:13:on_ld_toggle_button_click	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:397:13:button_process	16	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:384:13:button_init.part.0	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:598:12:clamp_point_with_margin.constprop	12	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:759:18:classify_gesture.constprop	296	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:723:13:display_ld_hand	304	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:332:13:roi_shift_and_scale.constprop	56	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:817:7:gesture_start	296	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:862:6:display_hand	128	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:1427:13:dp_thread_fct	352	static,ignoring_inline_asm
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:1521:6:send_gesture_command	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:1278:13:nn_thread_fct	600	static,ignoring_inline_asm
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:1549:6:app_run	104	static,ignoring_inline_asm
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:1602:5:CMW_CAMERA_PIPE_FrameEventCallback	40	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/app.c:1612:5:CMW_CAMERA_PIPE_VsyncEventCallback	16	static

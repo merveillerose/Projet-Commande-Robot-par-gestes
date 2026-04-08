@@ -1,0 +1,6 @@
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/ipl/Src/IPL_resize.c:29:6:IPL_resize_bilinear_iu8ou8	112	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/ipl/Src/IPL_resize.c:86:6:IPL_resize_bilinear_iu8ou8_with_strides_RGB	80	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/ipl/Src/IPL_resize.c:68:6:IPL_resize_bilinear_iu8ou8_RGB	32	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/ipl/Src/IPL_resize.c:148:6:IPL_resize_nearest_iu8ou8_with_strides_RGB	32	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/ipl/Src/IPL_resize.c:131:6:IPL_resize_nearest_iu8ou8_RGB	32	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Lib/ipl/Src/IPL_resize.c:190:6:IPL_resize_nearest_iu8ou8	96	static

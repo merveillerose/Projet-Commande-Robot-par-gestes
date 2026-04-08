@@ -1,0 +1,9 @@
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/stm32n6xx_it.c:31:6:NMI_Handler	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/stm32n6xx_it.c:40:6:MemManage_Handler	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/stm32n6xx_it.c:53:6:BusFault_Handler	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/stm32n6xx_it.c:66:6:SecureFault_Handler	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/stm32n6xx_it.c:79:6:DebugMon_Handler	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/stm32n6xx_it.c:93:6:CSI_IRQHandler	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/stm32n6xx_it.c:98:6:DCMIPP_IRQHandler	8	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/stm32n6xx_it.c:103:6:GPU2D_IRQHandler	0	static
+C:/Users/tompi/Downloads/versionf de code2-17/versionf de code2-17/x-cube-n6-ai-hand-landmarks-main/Src/stm32n6xx_it.c:108:6:GPU2D_ER_IRQHandler	0	static
